@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <p>This is home pagedfdf</p>
-    
-  </div>
+  <weather></weather>
 </template>
 
 <script>

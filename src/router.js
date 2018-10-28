@@ -4,6 +4,7 @@ import NotFound from './views/NotFound.vue'
 import Preview from './views/Preview.vue'
 import Tutorial from './views/Tutorial.vue'
 import Home from './views/Home.vue'
+import Weather from './components/Weather.vue'
 
 Vue.use(Router)
 
@@ -12,7 +13,7 @@ export default new Router({
     routes: [{
             path: '/home',
             name: 'home',
-            component: Home
+            component: Weather
         },
 
         {
