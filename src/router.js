@@ -5,6 +5,7 @@ import Preview from './views/Preview.vue'
 import Tutorial from './views/Tutorial.vue'
 import Home from './views/Home.vue'
 import Weather from './components/Weather.vue'
+import WeatherDetail from './components/WeatherDetail.vue'
 
 Vue.use(Router)
 
@@ -13,7 +14,15 @@ export default new Router({
     routes: [{
             path: '/home',
             name: 'home',
-            component: Weather
+            component: Weather,
+            props: true
+        },
+
+        {
+            path: '/weather/:woeid',
+            name: 'WeatherDetail',
+            component: WeatherDetail,
+            props: true
         },
 
         {

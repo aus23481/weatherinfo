@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>City Name: <a v-bind:href="'/weather/'+cityid" target="_BLANK"> {{city_data.title}} </a>  </h3>
+    <h3>City Name: {{city_data.title}}   </h3>
     <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -10,7 +10,7 @@
                     </thead>
                     <tbody>
 
-                      <tr v-for="(w, index) in weather_data.consolidated_weather" :key="w" v-if="index<=0">
+                      <tr v-for="w in weather_data.consolidated_weather" :key="w" >
                             <td>{{w.weather_state_name}}</td>
                             <td >{{w.the_temp}}</td>
                             <td >{{w.min_temp}}</td>
@@ -27,23 +27,18 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Weather',
-  props: ["city"],
-  
+  name: 'WeatherDetail',
   data: function () {
             return { 
                     weather_data: [],                    
                     city_data: [],
-                    city : this.city,
-                    cityid: this.cityid
-                     
+                  
                    }     
         },
         mounted() {
           var app = this;
-          alert(this.city);
+          
           this.$http.get("http://localhost/api/weather.php?command=search&keyword=london")
           .then(response => {
                 this.city_data = response.body;
@@ -53,13 +48,12 @@ export default {
                 console.error(error);
             });   
            
-            this.getWeatherInfo(44418); 
+            this.getWeatherInfo(this.$route.params.woeid); 
         },
   methods :{
       getWeatherInfo(cityid){
-        //alert(this.cityname);
+        alert(cityid);
         var app = this;
-        this.cityid = cityid;
                
                this.$http.get("http://localhost/api/weather.php?command=location&woeid="+cityid)
           .then(response => {
