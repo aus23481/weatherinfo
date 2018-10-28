@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h3>City Name: <a v-bind:href="'/weather/'+cityid" target="_BLANK"> {{city_data.title}} </a>  </h3>
+  <div >
+
+      <h3>City Name: <a v-bind:href="'/weather/'+cityid" target="_BLANK"> {{weather_data.title}} </a>  </h3>
     <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -22,7 +23,7 @@
                     </tbody>
     </table>
 
-      
+     
   </div>
 </template>
 
@@ -37,13 +38,14 @@ export default {
                     weather_data: [],                    
                     city_data: [],
                     city : this.city,
-                    cityid: this.cityid
-                     
+                    cityid: this.cityid,
+                    cityids:[2344116, 638242, 44418, 565346, 560743, 9807]                     
                    }     
         },
         mounted() {
-          var app = this;
-          alert(this.city);
+         
+        /* var app = this;
+          //alert(this.city);
           this.$http.get("http://localhost/api/weather.php?command=search&keyword=london")
           .then(response => {
                 this.city_data = response.body;
@@ -52,7 +54,7 @@ export default {
             }, error => {
                 console.error(error);
             });   
-           
+          */ 
             this.getWeatherInfo(44418); 
         },
   methods :{

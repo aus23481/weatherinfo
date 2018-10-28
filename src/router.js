@@ -27,7 +27,7 @@ export default new Router({
 
         {
             path: '/',
-            redirect: { name: 'tutorial' }
+            redirect: { name: 'home' }
         },
         {
             path: '/not-found',
