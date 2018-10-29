@@ -52,21 +52,17 @@ export default {
         },
   methods :{
       getWeatherInfo(cityid){
-        alert(cityid);
+
         var app = this;
                
                this.$http.get("http://localhost/api/weather.php?command=location&woeid="+cityid)
           .then(response => {
                 this.weather_data = response.body;
-                //alert(this.weather_data.time);
                
             }, error => {
                 console.error(error);
             });
                
-      },
-      test2(){
-        ///
       }
 
   }

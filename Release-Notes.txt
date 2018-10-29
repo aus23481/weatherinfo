@@ -1,0 +1,6 @@
+#1. Api has been placed to localhost
+#2. Lists the 6 cities weather info at home page
+#3. At home page city name is linked to its details page
+#4. Search box for searching with Cityname.
+#5. Weather custom component has been used
+#6. Vuesjs Pismic starter kit has been used as for better and faster env.

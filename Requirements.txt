@@ -58,10 +58,12 @@ When the search is run, the user should be sent to this URI.
 For instance, if one searches for �Dublin,� they go to /#/search/dublin
 
 
-If the search yields results, display the weather for today in matching cities (using the <weather> custom component). If there are no results, say �No results were found. Try changing the keyword!�
+If the search yields results, display the weather for today in matching cities (using the
+ <weather> custom component). If there are no results, say �No results were found. Try changing the keyword!�
 
 
-We should be able to change our keyword (and see the current keyword) and search again without having to go back to the home page.
+We should be able to change our keyword (and see the current keyword) and search again
+ without having to go back to the home page.
 
 
 

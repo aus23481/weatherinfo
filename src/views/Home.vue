@@ -1,5 +1,5 @@
 <template>
-  <weather city="London"></weather>
+  <weather city-name="London"></weather>
 </template>
 
 <script>
